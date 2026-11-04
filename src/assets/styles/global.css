@@ -1,6 +1,6 @@
 :root {
-    --primary-font-color: '#212529';
-    --bg-color: #f8f9fa;
+    --primary-font-color: #f8f9fa;
+    --bg-color: #6d1426;
 
     --fontSize-heading-lg: 3rem;
     --fontSize-heading-base: 2.8rem;
@@ -9,7 +9,7 @@
     --sacramento: Sacramento, cursive;
     --arabic: 'Noto Naskh Arabic', serif;
 
-    --shadow-md: 0 0 10px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 0 10px rgba(11, 11, 11, 0.935);
 
     --transition-small: all .3s ease;
 }
@@ -90,4 +90,17 @@ p {
     50% {
         transform: translateY(0.8rem);
     }
+}
+/* Mantener visible el cursor en los campos del formulario */
+input,
+textarea,
+select {
+    cursor: text !important;
+     caret-color: #991111 !important;
+}
+
+/* Mantener la manito en los botones */
+button,
+a {
+    cursor: pointer;
 }

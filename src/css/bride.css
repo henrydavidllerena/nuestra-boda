@@ -4,6 +4,7 @@
     text-align: center;
     padding: 10rem 8rem;
     position: relative;
+    color: #333333;
 }
 
 .bride h2 {
@@ -61,7 +62,7 @@
 
 .bride i, .hadist i, .time a + p + i, .galeri > i {
     font-size: 3rem;
-    color: #908d8d;
+    color: #5fee0d;
     position: absolute;
     z-index: 10;
     animation: upAndDown 3s infinite;

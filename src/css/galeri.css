@@ -5,6 +5,10 @@
     padding: 4rem 8rem 12rem;
     margin-top: -6rem;
     position: relative;
+    color: #333333;
+}
+.galeri div:nth-of-type(2) {
+    color: #333333;
 }
 
 .galeri .container {

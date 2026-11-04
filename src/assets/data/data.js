@@ -2,51 +2,51 @@ export const data = {
     bride: {
         L: {
             id: 1,
-            name: 'Lorem Ipsum',
-            child: 'Putra ke lorem',
-            father: 'Lorem',
-            mother: 'Ipsum',
-            image: './src/assets/images/cowo.png'
+            name: 'David Llerena',
+            child: 'Novio',
+            father: 'Marianita de Jesus Montenegro',
+            mother: 'Randy Llerena',
+            image: './src/assets/images/david.jpeg'
         },
         P: {
             id: 2,
-            name: 'Ipsum Lorem',
-            child: 'Putri ke lorem',
-            father: 'Lorem',
-            mother: 'Ipsum',
-            image: './src/assets/images/cewe.png'
+            name: 'Ximena Santelices',
+            child: 'Novia',
+            father: 'Fátima Enríquez',
+            mother: 'Daniel Santelices',
+            image: './src/assets/images/xime.jpeg'
         },
 
-        couple: './src/assets/images/couple.png'
+        couple: './src/assets/images/juntos.jpg'
     },
 
     time: {
         marriage: {
-            year: '2030',
-            month: 'November',
-            date: '14',
-            day: 'Kamis',
+            year: '2027',
+            month: 'Marzo',
+            date: '13',
+            day: 'Sábado',
             hours: {
-                start: '08.00',
+                start: '16.00',
                 finish: 'Selesai'
             }
         },
         reception: {
-            year: '2024',
-            month: 'November',
-            date: '14',
-            day: 'Kamis',
+            year: '2027',
+            month: 'Marzo',
+            date: '13',
+            day: 'Sábado',
             hours: {
-                start: '11.00',
+                start: '18.00',
                 finish: 'Selesai'
             }
         },
-        address: 'Kp. Lorem, RT 000/ RW 000, Desa.Lorem, Kec.Ipsum, Kab.Lorem, Lorem (1234)'
+        address: 'Av. González Suárez N27-185, Urb. El Madrigal, Quito 170135, Ecuador'
     },
 
     link: {
         calendar: 'https://calendar.app.google/oSVLRMYC79GzuA4f9',
-        map: 'https://maps.app.goo.gl/q1Ask2Jgd4ekiiKBA',
+        map: 'https://maps.app.goo.gl/LWDnprmTNzcyYrsh9',
     },
 
     galeri: [
@@ -75,13 +75,13 @@ export const data = {
     bank: [
         {
             id: 1,
-            name: 'Lorem Ipsum',
+            name: 'Produbanco',
             icon: './src/assets/images/bca.png',
             rekening: '12345678'
         },
         {
             id: 2,
-            name: 'Ipsum Lorem',
+            name: 'De una',
             icon: './src/assets/images/bri.png',
             rekening: '12345678'
         },
@@ -89,7 +89,7 @@ export const data = {
 
     audio: './src/assets/audio/wedding.mp3',
 
-    api: 'https://script.google.com/macros/s/AKfycbyydz6N4p2VWUG8zsXeURv6ap9RP8a4eC3x6N3x6qTDjMVr1cIBz9S0NsHw2rWvBOSXGg/exec',
+    api: 'https://script.google.com/macros/s/AKfycbwEI_93W_jkTrv38XFzQ5IIKclGdV7V3K99lqwj6upn7PZF0nE6oAlUiuSGYDcn2cgL6Q/exec',
 
     navbar: [
         {
@@ -100,25 +100,25 @@ export const data = {
         },
         {
             id: 2,
-            teks: 'Mempelai',
+            teks: 'Bienvenida',
             icon: 'bx bxs-group',
             path: '#bride',
         },
         {
             id: 3,
-            teks: 'Tanggal',
+            teks: 'Fechas',
             icon: 'bx bxs-calendar-check',
             path: '#time',
         },
         {
             id: 4,
-            teks: 'Galeri',
+            teks: 'Fotos',
             icon: 'bx bxs-photo-album',
             path: '#galeri',
         },
         {
             id: 5,
-            teks: 'Ucapan',
+            teks: 'Registro',
             icon: 'bx bxs-message-rounded-dots',
             path: '#wishas',
         },

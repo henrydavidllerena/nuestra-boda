@@ -66,10 +66,10 @@ export const getCurrentDateTime = () => {
 };
 
 const monthMapping = {
-    'Januari': 1,
-    'Februari': 2,
-    'Maret': 3,
-    'April': 4,
+    'Enero': 1,
+    'Febrero': 2,
+    'Marzo': 3,
+    'Abril': 4,
     'Mei': 5,
     'Juni': 6,
     'Juli': 7,
