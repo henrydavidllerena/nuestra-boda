@@ -1,3 +1,8 @@
+
+/* ===================================
+   BARRA DE NAVEGACIÓN
+=================================== */
+
 header {
     width: 100%;
 }
@@ -6,46 +11,71 @@ header nav {
     display: none;
     width: 100%;
     padding: 0 1.4rem;
-    background-color: var(--bg-color);
+
+    /* Fondo blanco cálido */
+    background-color: #FFF9F5;
+
     align-items: center;
     justify-content: space-between;
+
     position: fixed;
     left: 0;
     right: 0;
     bottom: -100%;
+
     z-index: 99;
+
     transform: translateY(0);
     transition: bottom 2s ease, transform 1s ease;
+
+    /* Sombra suave */
+    box-shadow: 0 -2px 12px rgba(109, 20, 38, 0.08);
 }
 
+/* Mostrar navegación */
 header nav.active {
     bottom: 0;
 }
 
+/* Ocultar al desplazarse */
 header nav.scroll {
     transform: translateY(100%);
 }
 
+/* Enlaces e íconos */
 header nav a {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
     gap: 0.1rem;
     width: 4rem;
     height: 3rem;
-    color: #e50c0c;
+
+    /* Cereza vino */
+    color: #6D1426;
+
+    text-decoration: none;
+    border-radius: 8px;
+
+    transition: background-color 0.3s ease,
+                color 0.3s ease;
 }
 
+/* Tamaño de íconos */
 header nav a i {
     font-size: 1.2rem;
 }
 
+/* Texto debajo de los íconos */
 header nav a span {
     font-size: 0.6rem;
 }
 
-header nav a:hover {
-    background-color: #000;
-    color: #22ca10;
+/* Efecto al tocar una opción */
+header nav a:hover,
+header nav a:focus-visible {
+    background-color: #F3E2E5;
+    color: #6D1426;
 }
