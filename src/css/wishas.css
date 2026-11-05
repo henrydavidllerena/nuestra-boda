@@ -210,3 +210,56 @@
     right: 0;
     bottom: -15rem;
 }
+.wishas form textarea {
+    display: block;
+    width: 100%;
+    min-height: 150px;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: inherit;
+    border-radius: 8px;
+    resize: vertical;
+}
+.wishas form [hidden] {
+    display: none !important;
+}
+
+/* Alinear las preguntas de asistencia */
+
+.wishas form #attendance-details {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.wishas form #attendance-details label {
+    display: block;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 8px;
+}
+
+.wishas form #attendance-details input,
+.wishas form #attendance-details textarea {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 18px;
+    text-align: left;
+}
+
+/* Tamaño del cuadro de comentarios */
+
+.wishas form #message {
+    min-height: 150px;
+    padding: 15px;
+    resize: vertical;
+}
+
+/* Ocultar las preguntas cuando no asistirán */
+
+.wishas form #attendance-details[hidden] {
+    display: none !important;
+}

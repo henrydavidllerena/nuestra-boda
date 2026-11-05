@@ -1,0 +1,22 @@
+<section class="galeri" id="galeri" aria-labelledby="galeri-title">
+        <div class="container" data-aos="zoom-in" data-aos-duration="1000">
+            <h2 id="galeri-title">Galeria</h2>
+            <figure aria-label="galeri box"></figure>
+            <ul aria-label="pagination galeri"></ul>
+            <button type="button" aria-label="button prev galeri" data-id="">
+                <i class="bx bx-chevron-left"></i>
+            </button>
+            <button type="button" aria-label="button next galeri" data-id="">
+                <i class="bx bx-chevron-right"></i>
+            </button>
+            <button type="button" aria-label="Lihat semua foto">Te compartimos nuestras fotos</button>
+        </div>
+        <div>
+            <h2>Galeri</h2>
+            <div></div>
+            <button type="button" aria-label="close button">
+                <i class='bx bx-x' aria-hidden="true"></i>
+            </button>
+        </div>
+        <i class="bx bx-heart" aria-hidden="true"></i>
+    </section>

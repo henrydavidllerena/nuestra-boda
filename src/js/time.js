@@ -12,8 +12,8 @@ export const time = () => {
          A las ${details.hours.start} </p>`
     );
 
-    marriageDiv.innerHTML = createTimeListItem('Iglesia', data.time.marriage);
-    receptionDiv.innerHTML = createTimeListItem('Recepción', data.time.reception);
+    marriageDiv.innerHTML = createTimeListItem('Iglesia de la Paz', data.time.marriage);
+    receptionDiv.innerHTML = createTimeListItem('Recepción: Hotel Quito', data.time.reception);
 
     mapLink.href = data.link.map;
     addressParagraph.textContent = data.time.address;
