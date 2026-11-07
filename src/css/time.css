@@ -49,3 +49,43 @@
     right: 8rem;
     top: 22rem;
 }
+
+/* =====================================
+   BOTÓN GOOGLE MAPS
+===================================== */
+
+.time a {
+    position: relative;
+    z-index: 2;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 14px 22px;
+
+    background-color: #6D1426;
+    color: #FFFFFF;
+
+    border-radius: 10px;
+    text-decoration: none;
+
+    cursor: pointer;
+    touch-action: manipulation;
+}
+
+/* Adaptación para celulares */
+
+@media (max-width: 768px) {
+
+    .time {
+        padding-bottom: 100px;
+    }
+
+    .time a {
+        max-width: calc(100% - 30px);
+        min-height: 50px;
+        box-sizing: border-box;
+    }
+}
