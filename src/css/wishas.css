@@ -263,3 +263,55 @@
 .wishas form #attendance-details[hidden] {
     display: none !important;
 }
+
+
+/* Formulario adaptable a celulares */
+
+.wishas form {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.wishas form button[type="submit"] {
+    display: block;
+    width: 100%;
+    min-height: 54px;
+    padding: 14px 18px;
+    margin: 20px 0;
+
+    background-color: #6D1426;
+    color: #FFFFFF;
+
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 1.4;
+
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    touch-action: manipulation;
+}
+
+.wishas form button[type="submit"]:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Ocultar correctamente las preguntas */
+
+.wishas form #attendance-details[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 768px) {
+    .wishas form {
+        padding: 0 15px;
+    }
+
+    .wishas form button[type="submit"] {
+        margin-bottom: 90px;
+    }
+}
+

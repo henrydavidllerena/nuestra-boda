@@ -33,41 +33,33 @@ export const wishas = () => {
     const originalButtonText = buttonForm.textContent;
 
     // Mostrar preguntas solo si el invitado asistirá
-    const updateAttendanceFields = () => {
+    
+const updateAttendanceFields = () => {
 
-        const isAttending = attendanceSelect.value === 'y';
+    const isAttending = attendanceSelect.value === 'y';
 
-        if (attendanceDetails) {
+    // Mostrar u ocultar preguntas adicionales
+    attendanceDetails.hidden = !isAttending;
 
-            attendanceDetails.hidden = !isAttending;
+    // Activar únicamente cuando asistirán
+    adultsInput.disabled = !isAttending;
+    childrenInput.disabled = !isAttending;
+    messageInput.disabled = !isAttending;
 
-        } else {
+    // Campos obligatorios solo si asistirán
+    adultsInput.required = isAttending;
+    childrenInput.required = isAttending;
 
-            // Compatibilidad con HTML anterior
-            [adultsInput, childrenInput, messageInput].forEach((input) => {
+    // Cuando no asistirán, registrar cero personas
+    if (!isAttending) {
+        adultsInput.value = 0;
+        childrenInput.value = 0;
+        messageInput.value = '';
+    }
+};
 
-                const label = form.querySelector(
-                    `label[for="${input.id}"]`
-                );
-
-                input.hidden = !isAttending;
-
-                if (label) {
-                    label.hidden = !isAttending;
-                }
-            });
-        }
-
-        adultsInput.required = isAttending;
-        childrenInput.required = isAttending;
-    };
-
-    attendanceSelect.addEventListener(
-        'change',
-        updateAttendanceFields
-    );
-
-    updateAttendanceFields();
+attendanceSelect.addEventListener('change', updateAttendanceFields);
+updateAttendanceFields();
 
 
     // ==========================================
