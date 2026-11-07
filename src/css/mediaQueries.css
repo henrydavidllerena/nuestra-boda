@@ -189,3 +189,42 @@
         font-size: 0.6rem;
     }
 }
+
+/* ===================================
+   CORRECCIÓN PARA CELULARES
+   Ceremonia y recepción
+=================================== */
+
+@media (max-width: 768px) {
+
+    /* Permitir que la sección crezca con su contenido */
+    section.time {
+        height: auto !important;
+        min-height: 100vh;
+        overflow: visible;
+        box-sizing: border-box;
+
+        /* Espacio para el botón de Google Maps */
+        padding-bottom: 130px;
+    }
+
+    /* Enlace de Google Maps */
+    section.time > a {
+        position: relative;
+        z-index: 5;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 50px;
+        margin: 30px auto 20px;
+        padding: 14px 24px;
+        box-sizing: border-box;
+        touch-action: manipulation;
+    }
+
+    /* Separación con la siguiente sección */
+    section.wishas {
+        position: relative;
+        z-index: 1;
+    }
+}
