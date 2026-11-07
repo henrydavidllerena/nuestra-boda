@@ -62,7 +62,7 @@
     }
 
     .galeri {
-        margin-top: -6rem;
+        margin-top: 0;
         padding: 4rem 1.4rem;
     }
 
@@ -127,7 +127,7 @@
 
     .wishas {
         padding: 1rem 1.4rem 2rem;
-        margin-top: -14rem;
+        margin-top: 0rem;
     }
 
     .wishas div:nth-of-type(1) > div{
@@ -190,41 +190,35 @@
     }
 }
 
-/* ===================================
-   CORRECCIÓN PARA CELULARES
-   Ceremonia y recepción
-=================================== */
 
-@media (max-width: 768px) {
+/* =====================================
+   AJUSTES FINALES PARA CELULARES
+===================================== */
 
-    /* Permitir que la sección crezca con su contenido */
-    section.time {
-        height: auto !important;
-        min-height: 100vh;
-        overflow: visible;
+@media screen and (max-width: 768px) {
+
+    /* Ceremonia y recepción */
+    .time {
+        height: auto;
+        min-height: 0;
+        padding-bottom: 5rem;
         box-sizing: border-box;
-
-        /* Espacio para el botón de Google Maps */
-        padding-bottom: 130px;
     }
 
-    /* Enlace de Google Maps */
-    section.time > a {
+    /* Botón Google Maps */
+    .time > a {
         position: relative;
+        display: flex;
+        width: fit-content;
+        max-width: 100%;
+        min-height: 54px;
+        margin: 2rem auto;
         z-index: 5;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 50px;
-        margin: 30px auto 20px;
-        padding: 14px 24px;
-        box-sizing: border-box;
-        touch-action: manipulation;
     }
 
-    /* Separación con la siguiente sección */
-    section.wishas {
-        position: relative;
-        z-index: 1;
+    /* Evitar que las secciones se superpongan */
+    .wishas,
+    .galeri {
+        margin-top: 0;
     }
 }
