@@ -89,3 +89,155 @@
         box-sizing: border-box;
     }
 }
+
+/* Diseño renovado: ceremonia y recepción */
+
+.time {
+    height: auto;
+    min-height: 0;
+    padding: 6rem 1.5rem 5rem;
+    box-sizing: border-box;
+    background-color: #FAF8F7;
+    text-align: center;
+}
+
+.time > h2 {
+    color: #6D1426;
+    margin-bottom: 1.5rem;
+}
+
+.time > p:first-of-type {
+    max-width: 650px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.8;
+}
+
+/* Contenedor de los dos eventos */
+.time > div:first-of-type {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    max-width: 950px;
+    margin: 0 auto 2rem;
+}
+
+/* Tarjetas */
+.time > div:first-of-type > div {
+    background: #FFFFFF;
+    border: 1px solid #E8C8CC;
+    border-radius: 18px;
+    padding: 2.5rem 1.5rem;
+    box-shadow: 0 5px 20px rgba(109, 20, 38, 0.05);
+}
+
+/* Eliminar márgenes antiguos */
+.time > div:first-of-type > div:nth-of-type(2) {
+    margin-top: 0;
+}
+
+/* Nombres de los lugares */
+.time > div:first-of-type > div h3 {
+    color: #6D1426;
+    font-size: clamp(2rem, 4vw, 3.3rem);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+/* Horarios */
+.time > div:first-of-type > div p {
+    margin: 0.6rem 0;
+    line-height: 1.6;
+}
+
+/* Botón de ubicación */
+.time > a {
+    position: relative;
+    display: inline-flex;
+    min-height: 52px;
+    max-width: 100%;
+    margin: 1.5rem auto;
+    padding: 14px 24px;
+    border-radius: 12px;
+    background-color: #6D1426;
+    color: #FFFFFF;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+/* Dirección */
+.time > a + p {
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Celulares */
+@media (max-width: 768px) {
+    .time {
+        padding: 5rem 1.2rem 6rem;
+    }
+
+    .time > div:first-of-type {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .time > div:first-of-type > div {
+        padding: 2rem 1rem;
+    }
+
+    .time > div:first-of-type > div h3 {
+        font-size: 2.5rem;
+    }
+
+    .time > a {
+        width: fit-content;
+        margin: 1.5rem auto;
+    }
+}
+
+/* Tarjetas del mismo tamaño */
+
+.time > div:first-of-type {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    align-items: stretch;
+}
+
+.time > div:first-of-type > div {
+    width: 100%;
+    height: 100%;
+    min-height: 280px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 2rem;
+    margin: 0;
+}
+
+/* Mantener los títulos proporcionados */
+
+.time > div:first-of-type > div h3 {
+    line-height: 1.2;
+    text-align: center;
+}
+
+/* Versión celular */
+
+@media (max-width: 768px) {
+
+    .time > div:first-of-type {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .time > div:first-of-type > div {
+        min-height: 280px;
+        padding: 2rem 1rem;
+    }
+}

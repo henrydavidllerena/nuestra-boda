@@ -20,69 +20,70 @@ export const data = {
         couple: './src/assets/images/juntos.jpg'
     },
 
-    time: {
-        marriage: {
-            year: '2027',
-            month: 'Marzo',
-            date: '13',
-            day: 'Sábado',
-            hours: {
-                start: '16.00',
-                finish: 'Selesai'
-            }
-        },
-        reception: {
-            year: '2027',
-            month: 'Marzo',
-            date: '13',
-            day: 'Sábado',
-            hours: {
-                start: '18.00',
-                finish: 'Selesai'
-            }
-        },
-        address: 'Av. González Suárez N27-185, Urb. El Madrigal, Quito 170135, Ecuador'
-    },
-
-    link: {
-        calendar: 'https://calendar.app.google/oSVLRMYC79GzuA4f9',
-        map: 'https://maps.app.goo.gl/LWDnprmTNzcyYrsh9',
-    },
-
-    galeri: [
-        {
-            id: 1,
-            image: './src/assets/images/1.png'
-        },
-        {
-            id: 2,
-            image: './src/assets/images/2.png'
-        },
-        {
-            id: 3,
-            image: './src/assets/images/3.png'
-        },
-        {
-            id: 4,
-            image: './src/assets/images/4.png'
-        },
-        {
-            id: 5,
-            image: './src/assets/images/5.png'
+    
+time: {
+    marriage: {
+        year: '2027',
+        month: 'Marzo',
+        date: '13',
+        day: 'Sábado',
+        hours: {
+            start: '16.00',
+            finish: 'Selesai'
         }
-    ],
+    },
+
+    reception: {
+        year: '2027',
+        month: 'Marzo',
+        date: '13',
+        day: 'Sábado',
+        hours: {
+            start: '18.00',
+            finish: 'Selesai'
+        }
+    },
+
+    // Direcciones de los dos eventos
+    marriageAddress: 'Dirección de la Iglesia de la Paz',
+    receptionAddress: 'Av. González Suárez N27-185, Quito',
+
+    // Dirección anterior, conservada por compatibilidad
+    address: 'Av. González Suárez N27-185, Urb. El Madrigal, Quito 170135, Ecuador'
+},
+
+
+   
+link: {
+    calendar: 'https://calendar.app.google/oSVLRMYC79GzuA4f9',
+
+    // Enlaces de Google Maps
+    marriageMap: 'https://share.google/lm2QttvRaJ4ODFoEw',
+    receptionMap: 'https://share.google/Zx2O8fa73QUpcRQoB',
+
+    // Enlace anterior, conservado por compatibilidad
+    map: 'https://maps.app.goo.gl/LWDnprmTNzcyYrsh9'
+},
+
+
+    
+        galeri: Array.from({ length: 42 }, (_, index) => ({
+            id: index + 1,
+            image: `./src/assets/images/${index + 1}.jpeg`
+        })),
+
 
     bank: [
         {
             id: 1,
-            name: 'Produbanco',
-            icon: './src/assets/images/bca.png',
-            rekening: '12345678'
+            name: 'David Llerena, ci. 1720847290',
+            icon: './src/assets/images/produbanco.jpg',
+            rekening: '12722075087, '
         },
         {
             id: 2,
-            name: 'De una',
-            icon: './src/assets/images/bri.png',
+            name: 'Ximena Santelices',
+            icon: './src/assets/images/pichincha.png',
             rekening: '12345678'
         },
     ],
