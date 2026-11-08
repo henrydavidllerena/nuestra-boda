@@ -45,7 +45,7 @@ time: {
     },
 
     // Direcciones de los dos eventos
-    marriageAddress: 'Dirección de la Iglesia de la Paz',
+    marriageAddress: 'Iglesia de la Paz, Whymper E7-172, Quito',
     receptionAddress: 'Av. González Suárez N27-185, Quito',
 
     // Dirección anterior, conservada por compatibilidad
