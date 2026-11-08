@@ -44,7 +44,7 @@ export const time = () => {
 
     // RECEPCIÓN
     receptionDiv.innerHTML = createTimeListItem(
-        'Recepción: Hotel Quito',
+        'Hotel Quito',
         data.time.reception,
         data.time.receptionAddress,
         data.link.receptionMap

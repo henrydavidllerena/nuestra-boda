@@ -78,13 +78,13 @@ link: {
             id: 1,
             name: 'David Llerena, ci. 1720847290',
             icon: './src/assets/images/produbanco.jpg',
-            rekening: '12722075087, '
+            rekening: '12722075087'
         },
         {
             id: 2,
             name: 'Ximena Santelices',
             icon: './src/assets/images/pichincha.png',
-            rekening: '12345678'
+            rekening: '2206372872'
         },
     ],
 
