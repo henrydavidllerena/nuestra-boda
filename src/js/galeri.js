@@ -1,82 +1,149 @@
-import {data} from "../assets/data/data.js";
 
-export const galeri = () => {
+import { data } from "../assets/data/data.js";
+
+export const galeri = async () => {
+
     const galeriElement = document.querySelector('.galeri');
-    const showAllContainer = galeriElement.querySelector('div:nth-of-type(2)');
+    if (!galeriElement) return;
 
-    const [_, figureElement, paginationElement, prevButton, nextButton, showAllButton] = galeriElement.children[0].children;
-    const [__, showAllBox, closeButton] = showAllContainer.children;
+    const container = galeriElement.querySelector('.container');
+    const figureElement = container.querySelector('figure');
+    const paginationElement = container.querySelector('ul');
 
-    const initializeGallery = () => {
-        const initialImage = data.galeri[0];
-        figureElement.innerHTML = `<img src="${initialImage.image}" alt="galeri image" id="${initialImage.id}">`;
+    const [prevButton, nextButton, showAllButton] =
+        container.querySelectorAll('button');
 
-        data.galeri.forEach((item, index) => {
-            paginationElement.innerHTML += `<li data-id="${item.id}" ${index === 0 ? 'class="active"' : ''}></li>`;
+    const showAllContainer =
+        galeriElement.querySelector(':scope > div:nth-of-type(2)');
+
+    const showAllBox =
+        showAllContainer.querySelector('div');
+
+    const closeButton =
+        showAllContainer.querySelector('button');
+
+    // Comprobar si una fotografía existe
+    const checkImage = (item) => {
+
+        return new Promise((resolve) => {
+
+            const img = new Image();
+
+            img.onload = () => resolve(item);
+            img.onerror = () => resolve(null);
+
+            img.src = item.image;
         });
-
-        updateNavigationButtons(initialImage.id);
     };
 
-    const updateGalleryImage = (id) => {
-        const selectedImage = data.galeri.find(item => item.id === id);
+    // Cargar solamente las fotografías existentes
+    const results = await Promise.all(
+        data.galeri.map(checkImage)
+    );
 
-        if (selectedImage) {
-            figureElement.innerHTML = `<img src="${selectedImage.image}" alt="galeri image" id="${selectedImage.id}">`;
+    const photos = results
+        .filter(Boolean)
+        .map((item, index) => ({
+            ...item,
+            id: index + 1
+        }));
 
-            paginationElement.querySelectorAll('li').forEach((li) => {
-                li.classList.toggle('active', parseInt(li.dataset.id) === id);
+    if (photos.length === 0) {
+        figureElement.innerHTML =
+            '<p>Pronto compartiremos nuestras fotografías ❤️</p>';
+
+        prevButton.hidden = true;
+        nextButton.hidden = true;
+        showAllButton.hidden = true;
+        return;
+    }
+
+    let currentIndex = 0;
+
+    // Mostrar fotografía
+    const showPhoto = (index) => {
+
+        currentIndex =
+            (index + photos.length) % photos.length;
+
+        const photo = photos[currentIndex];
+
+        figureElement.innerHTML = `
+            <img
+                src="${photo.image}"
+                alt="Fotografía ${currentIndex + 1}"
+            >
+        `;
+
+        // Actualizar paginación
+        paginationElement.querySelectorAll('li').forEach(
+            (li, i) => {
+                li.classList.toggle(
+                    'active',
+                    i === currentIndex
+                );
+            }
+        );
+    };
+
+    // Crear paginación
+    paginationElement.innerHTML = photos.map(
+        (_, index) => `
+            <li data-index="${index}"></li>
+        `
+    ).join('');
+
+    paginationElement.querySelectorAll('li').forEach(
+        (li) => {
+
+            li.addEventListener('click', () => {
+                showPhoto(Number(li.dataset.index));
             });
         }
-    };
+    );
 
-    const updateNavigationButtons = (id) => {
-        nextButton.dataset.id = `${id}`;
-        prevButton.dataset.id = `${id}`;
-    };
-
-    const autoPlayGallery = () => {
-        let id = parseInt(nextButton.dataset.id);
-        id = (id < data.galeri.length) ? id + 1 : 1;
-        updateNavigationButtons(id);
-        updateGalleryImage(id);
-    };
-
+    // Botón siguiente
     nextButton.addEventListener('click', () => {
-        let id = parseInt(nextButton.dataset.id);
-        if (id < data.galeri.length) {
-            id++;
-            updateNavigationButtons(id);
-            updateGalleryImage(id);
-        }
+        showPhoto(currentIndex + 1);
     });
 
+    // Botón anterior
     prevButton.addEventListener('click', () => {
-        let id = parseInt(prevButton.dataset.id);
-        if (id > 1) {
-            id--;
-            updateNavigationButtons(id);
-            updateGalleryImage(id);
-        }
+        showPhoto(currentIndex - 1);
     });
 
+    // Ver todas las fotografías
     showAllButton.addEventListener('click', () => {
-        showAllBox.innerHTML = data.galeri.map(item => `<img src="${item.image}" alt="image galeri">`).join('');
+
+        showAllBox.innerHTML = photos.map(
+            (photo, index) => `
+                <img
+                    src="${photo.image}"
+                    alt="Fotografía ${index + 1}"
+                    loading="lazy"
+                >
+            `
+        ).join('');
+
         showAllContainer.classList.add('active');
     });
 
+    // Cerrar galería
     closeButton.addEventListener('click', () => {
+
         showAllBox.innerHTML = '';
         showAllContainer.classList.remove('active');
     });
 
-    initializeGallery();
-    setInterval(autoPlayGallery, 3000);
+    // Primera fotografía
+    showPhoto(0);
 
-    paginationElement.querySelectorAll('li').forEach((pagination) => {
-        pagination.addEventListener('click', (e) => {
-            const id = +e.target.dataset.id;
-            updateGalleryImage(id);
-        })
-    })
+    // Reproducción automática
+    if (photos.length > 1) {
+        setInterval(() => {
+            if (!showAllContainer.classList.contains('active')) {
+                showPhoto(currentIndex + 1);
+            }
+        }, 3000);
+    }
 };
