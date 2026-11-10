@@ -67,11 +67,10 @@ link: {
 
 
     
-        galeri: Array.from({ length: 42 }, (_, index) => ({
-            id: index + 1,
-            image: `./src/assets/images/${index + 1}.jpeg`
-        })),
-
+    galeri: Array.from({ length: 100 }, (_, index) => ({
+    id: index + 1,
+    image: `./src/assets/images/${index + 1}.jpeg`
+})),
 
     bank: [
         {
