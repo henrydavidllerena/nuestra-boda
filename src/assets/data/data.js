@@ -45,7 +45,7 @@ time: {
     },
 
     // Direcciones de los dos eventos
-    marriageAddress: 'Iglesia Cristio Redentor, Calle Fernández de Recalde y Núñez de Bonilla (N24-34 / N25-34), sector La Gasca-Pambachupa, Quito, Ecuador',
+    marriageAddress: 'Calle Fernández de Recalde y Núñez de Bonilla (N24-34 / N25-34), sector La Gasca-Pambachupa, Quito, Ecuador',
     receptionAddress: 'Av. González Suárez N27-185, Quito',
 
     // Dirección anterior, conservada por compatibilidad
