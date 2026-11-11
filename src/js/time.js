@@ -36,7 +36,7 @@ export const time = () => {
 
     // CEREMONIA
     marriageDiv.innerHTML = createTimeListItem(
-        'Iglesia de la Paz',
+        'Iglesia Cristo Redentor',
         data.time.marriage,
         data.time.marriageAddress,
         data.link.marriageMap
