@@ -45,7 +45,7 @@ time: {
     },
 
     // Direcciones de los dos eventos
-    marriageAddress: 'Iglesia de la Paz, Whymper E7-172, Quito',
+    marriageAddress: 'Iglesia Cristio Redentor, Calle Fernández de Recalde y Núñez de Bonilla (N24-34 / N25-34), sector La Gasca-Pambachupa, Quito, Ecuador',
     receptionAddress: 'Av. González Suárez N27-185, Quito',
 
     // Dirección anterior, conservada por compatibilidad
@@ -58,7 +58,7 @@ link: {
     calendar: 'https://calendar.app.google/oSVLRMYC79GzuA4f9',
 
     // Enlaces de Google Maps
-    marriageMap: 'https://share.google/lm2QttvRaJ4ODFoEw',
+    marriageMap: 'https://share.google/VVvUp5xbBP2KrIgkJ',
     receptionMap: 'https://share.google/Zx2O8fa73QUpcRQoB',
 
     // Enlace anterior, conservado por compatibilidad
