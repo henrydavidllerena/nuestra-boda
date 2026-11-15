@@ -89,7 +89,7 @@ link: {
 
     audio: './src/assets/audio/wedding.mp3',
 
-    api: 'https://script.google.com/macros/s/AKfycbwEI_93W_jkTrv38XFzQ5IIKclGdV7V3K99lqwj6upn7PZF0nE6oAlUiuSGYDcn2cgL6Q/exec',
+    api: 'https://script.google.com/macros/s/AKfycbwB4VHtppqZuMorAOJ-XzJchiZGAQIrnxv92D7V48Q3-QTrWHiRT_vpz4bIu7Mj9LEAtg/exec',
 
     navbar: [
         {
