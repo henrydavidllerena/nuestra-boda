@@ -38,19 +38,14 @@ export const wishas = () => {
 const updateAttendanceFields = () => {
     const isAttending = attendanceSelect.value === 'y';
 
-    // Mostrar preguntas solo cuando asistirán
     attendanceDetails.hidden = !isAttending;
 
-    // Habilitar campos según la respuesta
     adultsInput.disabled = !isAttending;
     childrenInput.disabled = !isAttending;
     messageInput.disabled = !isAttending;
 
-    // Obligatoriedad de los campos
     adultsInput.required = isAttending;
     childrenInput.required = isAttending;
-
-    // No modificar los números ingresados por el usuario
 };
 
 attendanceSelect.addEventListener('change', updateAttendanceFields);
@@ -293,11 +288,11 @@ updateAttendanceFields();
                 : 'No podré asistir',
 
            adults: isAttending
-    ? Number.parseInt(adultsInput.value, 10)
-    : 0,
+                ? Number.parseInt(adultsInput.value, 10)
+               : 0,
 
-            children: isAttending
-                ? Number(childrenInput.value)
+         children: isAttending
+                ? Number.parseInt(childrenInput.value, 10)
                 : 0,
 
             message: isAttending
