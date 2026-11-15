@@ -292,9 +292,9 @@ updateAttendanceFields();
                 ? 'Asistiré'
                 : 'No podré asistir',
 
-            adults: isAttending
-                ? Number(adultsInput.value)
-                : 0,
+           adults: isAttending
+    ? Number.parseInt(adultsInput.value, 10)
+    : 0,
 
             children: isAttending
                 ? Number(childrenInput.value)
