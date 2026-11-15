@@ -94,7 +94,7 @@ updateAttendanceFields();
             >
 
             <figcaption>
-                No. de cuenta ${bank.rekening.slice(0, 4)}xxxx
+               No. de cuenta ${bank.rekening}
                 <br>
                 A nombre de ${bank.name}
             </figcaption>
