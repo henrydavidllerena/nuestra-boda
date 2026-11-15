@@ -34,28 +34,23 @@ export const wishas = () => {
 
     // Mostrar preguntas solo si el invitado asistirá
     
-const updateAttendanceFields = () => {
 
+const updateAttendanceFields = () => {
     const isAttending = attendanceSelect.value === 'y';
 
-    // Mostrar u ocultar preguntas adicionales
+    // Mostrar preguntas solo cuando asistirán
     attendanceDetails.hidden = !isAttending;
 
-    // Activar únicamente cuando asistirán
+    // Habilitar campos según la respuesta
     adultsInput.disabled = !isAttending;
     childrenInput.disabled = !isAttending;
     messageInput.disabled = !isAttending;
 
-    // Campos obligatorios solo si asistirán
+    // Obligatoriedad de los campos
     adultsInput.required = isAttending;
     childrenInput.required = isAttending;
 
-    // Cuando no asistirán, registrar cero personas
-    if (!isAttending) {
-        adultsInput.value = 0;
-        childrenInput.value = 0;
-        messageInput.value = '';
-    }
+    // No modificar los números ingresados por el usuario
 };
 
 attendanceSelect.addEventListener('change', updateAttendanceFields);
